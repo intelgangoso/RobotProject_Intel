@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20200131 12:11:24.319" rpa="false">
+<suite id="s1" name="RobotProject1" source="C:\Users\crystelg\git\RobotProject_Intel\RobotProject1">
+<suite id="s1-s1" name="Test" source="C:\Users\crystelg\git\RobotProject_Intel\RobotProject1\test">
+<suite id="s1-s1-s1" name="TestSuite1" source="C:\Users\crystelg\git\RobotProject_Intel\RobotProject1\test\TestSuite1.robot">
+<test id="s1-s1-s1-t1" name="Go to OrangeHRM site">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200131 12:11:24.528" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<status status="PASS" starttime="20200131 12:11:24.527" endtime="20200131 12:11:32.303"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=frmLogin</arg>
+</arguments>
+<status status="PASS" starttime="20200131 12:11:32.303" endtime="20200131 12:11:32.326"></status>
+</kw>
+<kw name="LoginKW">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=txtUsername</arg>
+<arg>@{CREDENTIALS}[0]</arg>
+</arguments>
+<msg timestamp="20200131 12:11:32.326" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20200131 12:11:32.326" endtime="20200131 12:11:32.387"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=txtPassword</arg>
+<arg>&amp;{LOGINDATA}[password]</arg>
+</arguments>
+<msg timestamp="20200131 12:11:32.388" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<status status="PASS" starttime="20200131 12:11:32.387" endtime="20200131 12:11:32.446"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=btnLogin</arg>
+</arguments>
+<msg timestamp="20200131 12:11:32.446" level="INFO">Clicking button 'id=btnLogin'.</msg>
+<status status="PASS" starttime="20200131 12:11:32.446" endtime="20200131 12:11:34.019"></status>
+</kw>
+<status status="PASS" starttime="20200131 12:11:32.326" endtime="20200131 12:11:34.019"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>id=frmLogin</arg>
+</arguments>
+<status status="PASS" starttime="20200131 12:11:34.020" endtime="20200131 12:11:34.026"></status>
+</kw>
+<doc>This is a sample login test</doc>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" starttime="20200131 12:11:24.527" endtime="20200131 12:11:34.026" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="User should see Dashboard page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class=menu</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.048" level="INFO">Element 'class=menu' is displayed.</msg>
+<status status="PASS" starttime="20200131 12:11:34.027" endtime="20200131 12:11:34.048"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Quick Launch</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.061" level="INFO">Current page contains text 'Quick Launch'.</msg>
+<status status="PASS" starttime="20200131 12:11:34.048" endtime="20200131 12:11:34.061"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Employee Distribution by Subunit</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.074" level="INFO">Current page contains text 'Employee Distribution by Subunit'.</msg>
+<status status="PASS" starttime="20200131 12:11:34.061" endtime="20200131 12:11:34.074"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Pending Leave Requests</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.087" level="INFO">Current page contains text 'Pending Leave Requests'.</msg>
+<status status="PASS" starttime="20200131 12:11:34.074" endtime="20200131 12:11:34.087"></status>
+</kw>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" starttime="20200131 12:11:34.026" endtime="20200131 12:11:34.087" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="User can click Admin in menu tabs">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>class=menu</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.102" level="INFO">Element 'class=menu' is displayed.</msg>
+<status status="PASS" starttime="20200131 12:11:34.088" endtime="20200131 12:11:34.102"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.getElementById("menu_admin_viewAdminModule").click();</arg>
+</arguments>
+<msg timestamp="20200131 12:11:34.103" level="INFO">Executing JavaScript:
+document.getElementById("menu_admin_viewAdminModule").click();
+Without any arguments.</msg>
+<status status="PASS" starttime="20200131 12:11:34.102" endtime="20200131 12:11:36.315"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>System Users</arg>
+</arguments>
+<status status="PASS" starttime="20200131 12:11:36.316" endtime="20200131 12:11:36.335"></status>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>id=dashboard__employeeDistribution</arg>
+</arguments>
+<msg timestamp="20200131 12:11:36.347" level="INFO">Element 'id=dashboard__employeeDistribution' did not exist.</msg>
+<status status="PASS" starttime="20200131 12:11:36.336" endtime="20200131 12:11:36.347"></status>
+</kw>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" starttime="20200131 12:11:34.088" endtime="20200131 12:11:36.347" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t4" name="Logout from OrangeHRM site">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=welcome</arg>
+</arguments>
+<msg timestamp="20200131 12:11:36.348" level="INFO">Clicking element 'id=welcome'.</msg>
+<status status="PASS" starttime="20200131 12:11:36.348" endtime="20200131 12:11:36.401"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>link=Logout</arg>
+</arguments>
+<status status="PASS" starttime="20200131 12:11:36.401" endtime="20200131 12:11:36.698"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>link=Logout</arg>
+</arguments>
+<msg timestamp="20200131 12:11:36.699" level="INFO">Clicking element 'link=Logout'.</msg>
+<status status="PASS" starttime="20200131 12:11:36.698" endtime="20200131 12:11:37.598"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200131 12:11:37.598" endtime="20200131 12:11:39.683"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Test Completed</arg>
+</arguments>
+<msg timestamp="20200131 12:11:39.685" level="INFO">Test Completed</msg>
+<status status="PASS" starttime="20200131 12:11:39.684" endtime="20200131 12:11:39.685"></status>
+</kw>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" starttime="20200131 12:11:36.348" endtime="20200131 12:11:39.686" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200131 12:11:24.371" endtime="20200131 12:11:39.688"></status>
+</suite>
+<status status="PASS" starttime="20200131 12:11:24.369" endtime="20200131 12:11:39.695"></status>
+</suite>
+<status status="PASS" starttime="20200131 12:11:24.348" endtime="20200131 12:11:39.699"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0">regression</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="RobotProject1">RobotProject1</stat>
+<stat pass="4" fail="0" id="s1-s1" name="Test">RobotProject1.Test</stat>
+<stat pass="4" fail="0" id="s1-s1-s1" name="TestSuite1">RobotProject1.Test.TestSuite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
